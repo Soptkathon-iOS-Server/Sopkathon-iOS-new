@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -50,24 +51,76 @@
             <point key="canvasLocation" x="983" y="207"/>
         </scene>
         <!--Search View Controller-->
-        <scene sceneID="yMb-sw-2Lm">
+        <scene sceneID="6iw-2C-SFj">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="RTj-RQ-pgX" customClass="SearchViewController" customModule="CinemaSalon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zza-hs-EdJ">
+                <viewController storyboardIdentifier="SearchViewController" id="3CD-sy-CoO" customClass="SearchViewController" customModule="CinemaSalon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Go3-V7-2fV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WQu-e0-ECU">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fhy-hY-Klt">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MovieCell" reuseIdentifier="MovieCell" id="Hmz-u6-vLS" customClass="MovieCell" customModule="CinemaSalon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="34z-fl-6nM">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vbV-ef-yel">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="vbV-ef-yel" secondAttribute="bottom" id="2PZ-gp-gDg"/>
+                                                <constraint firstItem="vbV-ef-yel" firstAttribute="leading" secondItem="34z-fl-6nM" secondAttribute="leading" id="76P-mp-cwS"/>
+                                                <constraint firstItem="vbV-ef-yel" firstAttribute="top" secondItem="34z-fl-6nM" secondAttribute="top" id="OJG-nR-wXR"/>
+                                                <constraint firstAttribute="trailing" secondItem="vbV-ef-yel" secondAttribute="trailing" id="v2T-UF-7Ha"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="128"/>
+                                        <connections>
+                                            <outlet property="movieImage" destination="vbV-ef-yel" id="kAE-W5-D7O"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Nu-x1-mp0"/>
+                        <constraints>
+                            <constraint firstItem="WQu-e0-ECU" firstAttribute="leading" secondItem="djp-v9-dnP" secondAttribute="leading" id="2gS-d2-Vco"/>
+                            <constraint firstItem="WQu-e0-ECU" firstAttribute="top" secondItem="djp-v9-dnP" secondAttribute="top" id="6bD-MY-TCx"/>
+                            <constraint firstItem="djp-v9-dnP" firstAttribute="bottom" secondItem="WQu-e0-ECU" secondAttribute="bottom" id="ECz-wX-Suh"/>
+                            <constraint firstItem="djp-v9-dnP" firstAttribute="trailing" secondItem="WQu-e0-ECU" secondAttribute="trailing" id="wm8-x9-uzh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="djp-v9-dnP"/>
                     </view>
+                    <connections>
+                        <outlet property="searchCollectionView" destination="WQu-e0-ECU" id="hbd-me-XCr"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ktd-XC-rqm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DbI-TW-mmg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <collectionViewFlowLayout automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2zn-Vv-oIB">
+                    <size key="itemSize" width="128" height="128"/>
+                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </collectionViewFlowLayout>
             </objects>
-            <point key="canvasLocation" x="1644" y="207"/>
+            <point key="canvasLocation" x="1626" y="207"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qdi-ho-xnR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JX1-qr-cPM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="naviVC" automaticallyAdjustsScrollViewInsets="NO" id="JX1-qr-cPM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ubd-av-4pK">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>

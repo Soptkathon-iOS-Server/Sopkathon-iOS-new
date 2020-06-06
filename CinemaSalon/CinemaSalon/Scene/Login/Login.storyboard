@@ -1,8 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jem-Aq-SE2">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="4iK-5q-DIa">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="jem-Aq-SE2" customClass="LoginVC" customModule="CinemaSalon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="slk-8W-Ibg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakaoTalkImage20200607053114" translatesAutoresizingMaskIntoConstraints="NO" id="vmY-6U-JTL">
+                                <rect key="frame" x="113" y="143" width="149" height="149"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="BFG-ct-4yb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBtnLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kyn-9Z-NyI">
+                                <rect key="frame" x="98" y="279" width="180" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="ONd-A1-had"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="c2W-I1-fNu">
+                                <rect key="frame" x="37" y="383" width="301" height="139"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kTV-7l-ZlF">
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="38.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nx2-PG-8Ig">
+                                        <rect key="frame" x="0.0" y="50.333333333333314" width="301" height="38.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWM-1w-uU6">
+                                        <rect key="frame" x="0.0" y="100.66666666666669" width="301" height="38.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="loginAction:" destination="jem-Aq-SE2" eventType="touchUpInside" id="VmJ-j6-XGe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kTV-7l-ZlF" firstAttribute="height" secondItem="Nx2-PG-8Ig" secondAttribute="height" id="0NO-JO-tnT"/>
+                                    <constraint firstAttribute="height" constant="139" id="Xnj-5G-7Yd"/>
+                                    <constraint firstItem="kTV-7l-ZlF" firstAttribute="height" secondItem="DWM-1w-uU6" secondAttribute="height" id="ftU-XD-v6y"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tKw-p5-2by" firstAttribute="trailing" secondItem="kyn-9Z-NyI" secondAttribute="trailing" constant="97" id="1Gq-RN-dbo"/>
+                            <constraint firstItem="tKw-p5-2by" firstAttribute="trailing" secondItem="vmY-6U-JTL" secondAttribute="trailing" constant="113" id="HCZ-mQ-SJI"/>
+                            <constraint firstItem="c2W-I1-fNu" firstAttribute="leading" secondItem="tKw-p5-2by" secondAttribute="leading" constant="37" id="PVU-9N-V7D"/>
+                            <constraint firstItem="vmY-6U-JTL" firstAttribute="top" secondItem="tKw-p5-2by" secondAttribute="top" constant="99" id="QhP-aR-kIg"/>
+                            <constraint firstItem="kTV-7l-ZlF" firstAttribute="top" secondItem="kyn-9Z-NyI" secondAttribute="bottom" constant="63" id="aNB-0J-SOY"/>
+                            <constraint firstItem="kyn-9Z-NyI" firstAttribute="leading" secondItem="tKw-p5-2by" secondAttribute="leading" constant="98" id="fHB-l4-kD4"/>
+                            <constraint firstItem="tKw-p5-2by" firstAttribute="trailing" secondItem="c2W-I1-fNu" secondAttribute="trailing" constant="37" id="iOC-xQ-BMP"/>
+                            <constraint firstItem="vmY-6U-JTL" firstAttribute="leading" secondItem="tKw-p5-2by" secondAttribute="leading" constant="113" id="oK8-LR-oCK"/>
+                            <constraint firstItem="kyn-9Z-NyI" firstAttribute="top" secondItem="tKw-p5-2by" secondAttribute="top" constant="235" id="vdZ-UY-46c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tKw-p5-2by"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="DWM-1w-uU6" id="Gv0-yx-kMJ"/>
+                        <outletCollection property="textFields" destination="kTV-7l-ZlF" collectionClass="NSMutableArray" id="vPt-Wl-VrM"/>
+                        <outletCollection property="textFields" destination="Nx2-PG-8Ig" collectionClass="NSMutableArray" id="2Ug-u9-X7V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPT-3k-JUl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242" y="163"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="kakaoTalkImage20200607053114" width="149" height="149"/>
+        <image name="mainBtnLogo" width="180" height="41"/>
+    </resources>
 </document>
