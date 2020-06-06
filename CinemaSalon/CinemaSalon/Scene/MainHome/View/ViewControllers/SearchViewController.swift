@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate {
+class SearchViewController: UIViewController {
     
     var movieData: [UIImage?] = [
         UIImage(named: "1"),
@@ -37,7 +37,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         setNavigationBar()
         setOtherSettings()
-        
     }
 }
 
