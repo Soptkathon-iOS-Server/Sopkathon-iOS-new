@@ -21,7 +21,7 @@ extension UIColor {
         case 1: return UIColor.blue
         case 2: return UIColor.orange
         case 3: return UIColor.red
-        case 4: return UIColor.black
+        case 4: return UIColor.purple
             
         default: return UIColor.purple
         }
